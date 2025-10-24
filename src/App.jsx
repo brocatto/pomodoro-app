@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import MusicPlayer from './MusicPlayer'
+import Feedback from './Feedback'
 
 function App() {
   const [minutes, setMinutes] = useState(25)
@@ -520,6 +521,9 @@ function App() {
         {/* Music Player */}
         <MusicPlayer />
       </div>
+
+      {/* Feedback Button */}
+      <Feedback />
     </div>
   )
 }
