@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
+import MusicPlayer from './MusicPlayer'
 
 function App() {
   const [minutes, setMinutes] = useState(25)
@@ -355,7 +356,7 @@ function App() {
 
           <div className="timer-section">
             <div className="progress-ring">
-              <svg width="320" height="320">
+              <svg viewBox="0 0 320 320">
                 <circle
                   cx="160"
                   cy="160"
@@ -515,6 +516,9 @@ function App() {
             )}
           </div>
         </div>
+
+        {/* Music Player */}
+        <MusicPlayer />
       </div>
     </div>
   )
