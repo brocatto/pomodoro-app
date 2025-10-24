@@ -299,11 +299,6 @@ function App() {
     }
   }
 
-  const quickTest = () => {
-    setIsActive(false)
-    setMinutes(0)
-    setSeconds(5)
-  }
 
   const formatTime = (mins, secs) => {
     return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
@@ -410,13 +405,6 @@ function App() {
               onClick={() => setShowSoundSettings(!showSoundSettings)}
             >
               🔊 Sound Settings
-            </button>
-            <button
-              className="test-btn"
-              onClick={quickTest}
-              title="Set timer to 5 seconds for testing"
-            >
-              ⚡ Quick Test (5s)
             </button>
           </div>
 
