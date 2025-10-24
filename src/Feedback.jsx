@@ -1,31 +1,55 @@
 import { useState } from 'react'
 import './Feedback.css'
 
+// Replace with your Formspree form ID
+// Get yours at: https://formspree.io/
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+
 function Feedback() {
   const [isOpen, setIsOpen] = useState(false)
   const [feedback, setFeedback] = useState('')
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
 
-    // You can integrate with services like:
-    // - Formspree
-    // - Google Forms
-    // - Web3Forms
-    // - Your own backend
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: feedback,
+          email: email || 'No email provided',
+          _subject: 'New Feedback - GettingShitDone',
+        }),
+      })
 
-    console.log('Feedback submitted:', { feedback, email })
+      if (!response.ok) {
+        throw new Error('Failed to send feedback')
+      }
 
-    // For now, just show success message
-    setSubmitted(true)
-    setTimeout(() => {
-      setIsOpen(false)
-      setSubmitted(false)
-      setFeedback('')
-      setEmail('')
-    }, 2000)
+      // Success
+      setSubmitted(true)
+      setTimeout(() => {
+        setIsOpen(false)
+        setSubmitted(false)
+        setFeedback('')
+        setEmail('')
+        setError(null)
+      }, 2500)
+    } catch (err) {
+      console.error('Error submitting feedback:', err)
+      setError('Failed to send feedback. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -65,6 +89,8 @@ function Feedback() {
                     onChange={(e) => setFeedback(e.target.value)}
                     required
                     rows="5"
+                    disabled={isSubmitting}
+                    name="message"
                   />
 
                   <input
@@ -73,10 +99,22 @@ function Feedback() {
                     placeholder="Email (optional - for follow-up)"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    disabled={isSubmitting}
+                    name="email"
                   />
 
-                  <button type="submit" className="feedback-submit">
-                    Send Feedback
+                  {error && (
+                    <div className="feedback-error">
+                      ⚠️ {error}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="feedback-submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Feedback'}
                   </button>
                 </form>
               </>
