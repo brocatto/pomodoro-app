@@ -2,14 +2,18 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  padding: 8px 12px;
+  border-radius: 20px;
+  padding: 6px 14px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   align-items: center;
-  font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .language-toggle:hover {
@@ -18,17 +22,17 @@
   transform: translateY(-2px);
 }
 
-.language-toggle .flag {
-  font-size: 24px;
-  line-height: 1;
-  opacity: 0.4;
+.language-toggle .lang {
   transition: all 0.3s ease;
-  filter: grayscale(100%);
-  display: inline-block;
+  opacity: 0.5;
 }
 
-.language-toggle .flag.active {
+.language-toggle .lang.active {
   opacity: 1;
-  filter: grayscale(0%);
-  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.language-toggle .separator {
+  opacity: 0.3;
+  font-weight: 300;
 }

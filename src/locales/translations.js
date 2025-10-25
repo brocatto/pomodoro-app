@@ -86,11 +86,51 @@ export const translations = {
         subtitle: 'Lofi & ambient beats for concentration',
         playlist: 'Playlist'
       }
+    },
+    dashboard: {
+      back: 'Back',
+      title: 'Your Progress Story',
+      totalSessions: 'Sessions Completed',
+      currentStreak: 'Day Streak',
+      totalTime: 'Total Hours',
+      avgPerDay: 'Avg / Day',
+      bestStreak: 'Best Streak',
+      bestDay: 'Best Day',
+      days: 'days',
+      emptyState: {
+        title: 'Your journey begins here',
+        description: 'Complete your first session to start tracking your progress and building your focus story.'
+      },
+      hero: {
+        subtitle: 'Your commitment to focus'
+      },
+      consistency: {
+        title: 'Consistency Map',
+        subtitle: 'Your 8-week activity pattern',
+        less: 'Less',
+        more: 'More'
+      },
+      trend: {
+        title: 'Weekly Momentum',
+        subtitle: 'How your focus is evolving'
+      },
+      motivation: {
+        great: 'of consistency. You\'re unstoppable.',
+        good: 'strong. Keep the momentum.',
+        start: 'streak. You\'re building discipline.',
+        comeback: 'Ready to start a new streak?'
+      },
+      tooltips: {
+        totalSessions: 'Total completed focus sessions since you started',
+        currentStreak: 'Consecutive days with at least one session',
+        totalTime: 'Total time spent in focus mode',
+        avgPerDay: 'Average sessions per active day (last 30 days)'
+      }
     }
   },
   'pt-BR': {
     landing: {
-      logo: 'FazendoMerda',
+      logo: 'GettingShitDone',
       startNow: 'Começar Agora →',
       hero: {
         title1: 'Pare de procrastinar.',
@@ -174,6 +214,46 @@ export const translations = {
         title: 'Música para Foco',
         subtitle: 'Batidas lofi e ambiente para concentração',
         playlist: 'Playlist'
+      }
+    },
+    dashboard: {
+      back: 'Voltar',
+      title: 'Sua História de Progresso',
+      totalSessions: 'Sessões Completadas',
+      currentStreak: 'Sequência de Dias',
+      totalTime: 'Horas Totais',
+      avgPerDay: 'Média / Dia',
+      bestStreak: 'Melhor Sequência',
+      bestDay: 'Melhor Dia',
+      days: 'dias',
+      emptyState: {
+        title: 'Sua jornada começa aqui',
+        description: 'Complete sua primeira sessão para começar a acompanhar seu progresso e construir sua história de foco.'
+      },
+      hero: {
+        subtitle: 'Seu compromisso com o foco'
+      },
+      consistency: {
+        title: 'Mapa de Consistência',
+        subtitle: 'Seu padrão de atividade de 8 semanas',
+        less: 'Menos',
+        more: 'Mais'
+      },
+      trend: {
+        title: 'Momento Semanal',
+        subtitle: 'Como seu foco está evoluindo'
+      },
+      motivation: {
+        great: 'de consistência. Você é imparável.',
+        good: 'firme. Mantenha o ritmo.',
+        start: 'de sequência. Você está construindo disciplina.',
+        comeback: 'Pronto para começar uma nova sequência?'
+      },
+      tooltips: {
+        totalSessions: 'Total de sessões de foco completadas desde o início',
+        currentStreak: 'Dias consecutivos com pelo menos uma sessão',
+        totalTime: 'Tempo total gasto em modo de foco',
+        avgPerDay: 'Média de sessões por dia ativo (últimos 30 dias)'
       }
     }
   }

@@ -10,11 +10,12 @@ function LanguageToggle() {
       onClick={toggleLanguage}
       title={language === 'en-US' ? 'Switch to Portuguese' : 'Mudar para Inglês'}
     >
-      <span className={`flag ${language === 'en-US' ? 'active' : ''}`}>
-        🇺🇸
+      <span className={`lang ${language === 'en-US' ? 'active' : ''}`}>
+        EN
       </span>
-      <span className={`flag ${language === 'pt-BR' ? 'active' : ''}`}>
-        🇧🇷
+      <span className="separator">/</span>
+      <span className={`lang ${language === 'pt-BR' ? 'active' : ''}`}>
+        PT
       </span>
     </button>
   )
