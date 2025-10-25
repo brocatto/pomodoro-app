@@ -279,6 +279,46 @@ body {
   transform: translateY(-1px);
 }
 
+.test-btn.disabled {
+  opacity: 0.5;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.test-btn.disabled:hover {
+  background: rgba(255, 255, 255, 0.03);
+  transform: none;
+}
+
+/* Notification Test */
+.notification-test {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+.test-notification-btn {
+  background: rgba(76, 175, 80, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  color: #4CAF50;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', sans-serif;
+}
+
+.test-notification-btn:hover {
+  background: rgba(76, 175, 80, 0.25);
+  border-color: rgba(76, 175, 80, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
 /* Sound Settings */
 .sound-settings {
   background: rgba(255, 255, 255, 0.03);

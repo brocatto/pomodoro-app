@@ -5,10 +5,22 @@ import Feedback from './Feedback'
 import { useLanguage } from './contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
 import { useProgressStats } from './hooks/useProgressStats'
+import { useNotifications } from './hooks/useNotifications'
+import { useMediaSession } from './hooks/useMediaSession'
+import NotificationBanner from './NotificationBanner'
 
 function App({ onShowDashboard }) {
   const { t } = useLanguage()
   const { addSession } = useProgressStats()
+  const {
+    permission,
+    isSupported,
+    isEnabled,
+    requestPermission,
+    sendNotification,
+    toggleNotifications,
+    getDaysSinceLastUse
+  } = useNotifications()
   const [minutes, setMinutes] = useState(25)
   const [seconds, setSeconds] = useState(0)
   const [isActive, setIsActive] = useState(false)
@@ -252,6 +264,56 @@ function App({ onShowDashboard }) {
     }
   }
 
+  // Format time for display (used in timer and media session)
+  const formatTime = (mins, secs) => {
+    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+  }
+
+  // Media Session for lockscreen controls
+  const { updatePositionState } = useMediaSession({
+    title: isBreak
+      ? `${formatTime(minutes, seconds)} - ${t('app.mode.break') || 'Break Time'}`
+      : `${formatTime(minutes, seconds)} - ${t('app.mode.focus') || 'Focus Time'}`,
+    artist: 'GettingShitDone',
+    album: 'Pomodoro Timer',
+    isPlaying: isActive,
+    onPlay: () => {
+      if (!isActive) {
+        playClickSound()
+        setIsActive(true)
+      }
+    },
+    onPause: () => {
+      if (isActive) {
+        playPauseSound()
+        setIsActive(false)
+      }
+    },
+    onStop: () => {
+      setIsActive(false)
+      setIsBreak(false)
+      setMinutes(WORK_TIME)
+      setSeconds(0)
+    },
+    onSkipForward: () => {
+      // Skip to break or next session
+      if (!isBreak) {
+        setIsBreak(true)
+        setMinutes(BREAK_TIME)
+        setSeconds(0)
+      }
+    }
+  })
+
+  // Update Media Session position state
+  useEffect(() => {
+    const totalSeconds = isBreak ? BREAK_TIME * 60 : WORK_TIME * 60
+    const currentSeconds = minutes * 60 + seconds
+    const elapsed = totalSeconds - currentSeconds
+
+    updatePositionState(totalSeconds, elapsed)
+  }, [minutes, seconds, isBreak, updatePositionState])
+
   useEffect(() => {
     if (isActive) {
       intervalRef.current = setInterval(() => {
@@ -259,6 +321,19 @@ function App({ onShowDashboard }) {
           if (minutes === 0) {
             // Timer finished
             playCompletionSound()
+
+            // Send notification
+            if (isBreak) {
+              sendNotification(
+                t('notifications.messages.breakComplete.title'),
+                t('notifications.messages.breakComplete.body')
+              )
+            } else {
+              sendNotification(
+                t('notifications.messages.pomodoroComplete.title'),
+                t('notifications.messages.pomodoroComplete.body')
+              )
+            }
 
             // Save session to stats
             const sessionType = isBreak ? 'break' : 'work'
@@ -311,11 +386,6 @@ function App({ onShowDashboard }) {
     }
   }
 
-
-  const formatTime = (mins, secs) => {
-    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
-  }
-
   const progress = isBreak
     ? ((BREAK_TIME * 60 - (minutes * 60 + seconds)) / (BREAK_TIME * 60)) * 100
     : ((WORK_TIME * 60 - (minutes * 60 + seconds)) / (WORK_TIME * 60)) * 100
@@ -353,6 +423,12 @@ function App({ onShowDashboard }) {
 
   return (
     <div className="app">
+      <NotificationBanner
+        permission={permission}
+        onRequestPermission={requestPermission}
+        getDaysSinceLastUse={getDaysSinceLastUse}
+      />
+
       <div className="background-orbs">
         <div className="orb orb-1"></div>
         <div className="orb orb-2"></div>
@@ -424,6 +500,15 @@ function App({ onShowDashboard }) {
             >
               {t('app.soundSettings.button')}
             </button>
+            {isSupported && (
+              <button
+                className={`test-btn ${isEnabled ? '' : 'disabled'}`}
+                onClick={toggleNotifications}
+                title={isEnabled ? 'Notifications enabled' : 'Notifications disabled'}
+              >
+                🔔 {t('notifications.toggle.label')} {isEnabled ? '✓' : '✗'}
+              </button>
+            )}
           </div>
 
           {showSoundSettings && (
@@ -459,6 +544,22 @@ function App({ onShowDashboard }) {
                   </div>
                 ))}
               </div>
+
+              {isSupported && isEnabled && (
+                <div className="notification-test">
+                  <button
+                    className="test-notification-btn"
+                    onClick={() => {
+                      sendNotification(
+                        t('notifications.messages.testNotification.title'),
+                        t('notifications.messages.testNotification.body')
+                      )
+                    }}
+                  >
+                    🔔 {t('notifications.toggle.test')}
+                  </button>
+                </div>
+              )}
             </div>
           )}
 

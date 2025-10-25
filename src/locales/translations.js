@@ -87,6 +87,36 @@ export const translations = {
         playlist: 'Playlist'
       }
     },
+    notifications: {
+      banner: {
+        title: 'Enable notifications?',
+        description: 'Get notified when your sessions complete',
+        activate: 'Enable',
+        notNow: 'Not now'
+      },
+      welcomeBack: {
+        title: 'Welcome back!',
+        message: 'It\'s been {{days}} days since your last focus session. Ready to get back on track?'
+      },
+      toggle: {
+        label: 'Notifications',
+        test: 'Test Notification'
+      },
+      messages: {
+        pomodoroComplete: {
+          title: 'Pomodoro Complete!',
+          body: 'Time for a break. You earned it! 🍅'
+        },
+        breakComplete: {
+          title: 'Break Over!',
+          body: 'Time to get back to focus mode 💪'
+        },
+        testNotification: {
+          title: 'Notifications Working!',
+          body: 'You\'ll be notified when sessions complete 🔔'
+        }
+      }
+    },
     dashboard: {
       back: 'Back',
       title: 'Your Progress Story',
@@ -214,6 +244,36 @@ export const translations = {
         title: 'Música para Foco',
         subtitle: 'Batidas lofi e ambiente para concentração',
         playlist: 'Playlist'
+      }
+    },
+    notifications: {
+      banner: {
+        title: 'Ativar notificações?',
+        description: 'Seja avisado quando suas sessões terminarem',
+        activate: 'Ativar',
+        notNow: 'Agora não'
+      },
+      welcomeBack: {
+        title: 'Bem-vindo de volta!',
+        message: 'Faz {{days}} dias desde sua última sessão de foco. Pronto para voltar ao ritmo?'
+      },
+      toggle: {
+        label: 'Notificações',
+        test: 'Testar Notificação'
+      },
+      messages: {
+        pomodoroComplete: {
+          title: 'Pomodoro Completo!',
+          body: 'Hora do intervalo. Você merece! 🍅'
+        },
+        breakComplete: {
+          title: 'Intervalo Acabou!',
+          body: 'Hora de voltar ao foco 💪'
+        },
+        testNotification: {
+          title: 'Notificações Funcionando!',
+          body: 'Você será avisado quando as sessões terminarem 🔔'
+        }
       }
     },
     dashboard: {

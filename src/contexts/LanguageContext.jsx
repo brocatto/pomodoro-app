@@ -6,7 +6,7 @@ const LanguageContext = createContext()
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState('en-US')
 
-  const t = (key) => {
+  const t = (key, params = {}) => {
     const keys = key.split('.')
     let value = translations[language]
 
@@ -14,7 +14,14 @@ export function LanguageProvider({ children }) {
       value = value?.[k]
     }
 
-    return value || key
+    if (typeof value !== 'string') {
+      return value || key
+    }
+
+    // Replace {{variable}} with params
+    return value.replace(/\{\{(\w+)\}\}/g, (match, variable) => {
+      return params[variable] !== undefined ? params[variable] : match
+    })
   }
 
   const toggleLanguage = () => {
