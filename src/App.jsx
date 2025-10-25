@@ -4,9 +4,11 @@ import MusicPlayer from './MusicPlayer'
 import Feedback from './Feedback'
 import { useLanguage } from './contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
+import { useProgressStats } from './hooks/useProgressStats'
 
-function App() {
+function App({ onShowDashboard }) {
   const { t } = useLanguage()
+  const { addSession } = useProgressStats()
   const [minutes, setMinutes] = useState(25)
   const [seconds, setSeconds] = useState(0)
   const [isActive, setIsActive] = useState(false)
@@ -258,6 +260,11 @@ function App() {
             // Timer finished
             playCompletionSound()
 
+            // Save session to stats
+            const sessionType = isBreak ? 'break' : 'work'
+            const sessionDuration = isBreak ? BREAK_TIME : WORK_TIME
+            addSession(sessionType, sessionDuration)
+
             setIsBreak(!isBreak)
             setMinutes(isBreak ? WORK_TIME : BREAK_TIME)
             setSeconds(0)
@@ -280,7 +287,7 @@ function App() {
         clearInterval(intervalRef.current)
       }
     }
-  }, [isActive, minutes, seconds, isBreak])
+  }, [isActive, minutes, seconds, isBreak, addSession])
 
   const toggleTimer = () => {
     if (!isActive) {
@@ -355,6 +362,9 @@ function App() {
       <div className="container">
         <div className="glass-card">
           <div className="app-header">
+            <button className="dashboard-btn" onClick={onShowDashboard} title="View Progress">
+              📊
+            </button>
             <LanguageToggle />
           </div>
           <div className="mode-indicator">

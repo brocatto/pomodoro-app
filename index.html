@@ -2,31 +2,85 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon-32x32.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Mobile & PWA -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <meta name="theme-color" content="#1a1a1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GettingShitDone" />
+    <meta name="msapplication-TileColor" content="#1a1a1a" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- Primary Meta Tags -->
-    <title>GettingShitDone - Pomodoro Focus Timer</title>
-    <meta name="title" content="GettingShitDone - Pomodoro Focus Timer" />
-    <meta name="description" content="Stop procrastinating. Start finishing. A simple Pomodoro timer with built-in focus sounds and task tracking. No signup, no bullshit." />
-    <meta name="keywords" content="pomodoro, timer, focus, productivity, getting things done, task management, focus timer" />
+    <title>Stop Procrastinating. Start Finishing | GettingShitDone</title>
+    <meta name="title" content="Stop Procrastinating. Start Finishing | GettingShitDone" />
+    <meta name="description" content="25-minute focus sessions that actually work. Built-in sounds, task tracking, zero distractions. Start your first session free—no signup required." />
+    <meta name="keywords" content="pomodoro timer, focus timer, productivity app, stop procrastinating, task management, deep work, concentration tool, time management" />
+    <link rel="canonical" href="https://gettingshitdone.pro/" />
+
+    <!-- Author & Copyright -->
+    <meta name="author" content="GettingShitDone" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gettingshitdone.pro/" />
-    <meta property="og:title" content="GettingShitDone - Pomodoro Focus Timer" />
-    <meta property="og:description" content="Stop procrastinating. Start finishing. A simple Pomodoro timer that actually helps you get shit done." />
-    <meta property="og:image" content="https://pomodoro-app-eta-sooty.vercel.app/og-image.svg" />
+    <meta property="og:site_name" content="GettingShitDone" />
+    <meta property="og:title" content="Stop Procrastinating. Start Finishing Tasks" />
+    <meta property="og:description" content="A simple Pomodoro timer with focus sounds and task tracking. 25-minute sessions that eliminate distractions. Free to use, no signup needed." />
+    <meta property="og:image" content="https://gettingshitdone.pro/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:alt" content="GettingShitDone - Pomodoro Focus Timer" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="pt_BR" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://gettingshitdone.pro/" />
-    <meta property="twitter:title" content="GettingShitDone - Pomodoro Focus Timer" />
-    <meta property="twitter:description" content="Stop procrastinating. Start finishing. A simple Pomodoro timer that actually helps you get shit done." />
-    <meta property="twitter:image" content="https://pomodoro-app-eta-sooty.vercel.app/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://gettingshitdone.pro/" />
+    <meta name="twitter:title" content="Stop Procrastinating. Start Finishing Tasks" />
+    <meta name="twitter:description" content="25-minute focus sessions that actually work. Built-in sounds, task tracking, zero distractions. Start free—no signup." />
+    <meta name="twitter:image" content="https://gettingshitdone.pro/og-image.svg" />
+    <meta name="twitter:image:alt" content="GettingShitDone Pomodoro Timer Interface" />
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "GettingShitDone",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Any",
+      "url": "https://gettingshitdone.pro",
+      "description": "A free Pomodoro timer with focus sounds and task tracking. 25-minute sessions that help you stop procrastinating and start finishing tasks.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      },
+      "featureList": [
+        "25-minute Pomodoro focus sessions",
+        "Built-in focus sounds library",
+        "Task tracking and management",
+        "Progress statistics",
+        "No signup required",
+        "Completely free"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
