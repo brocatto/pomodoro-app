@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
+import { useLanguage } from './contexts/LanguageContext'
 
 function MusicPlayer() {
+  const { t } = useLanguage()
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
   const [volume, setVolume] = useState(0.5)
@@ -127,8 +129,8 @@ function MusicPlayer() {
       />
 
       <div className="player-header">
-        <h3>Focus Music</h3>
-        <span className="player-subtitle">Lofi & ambient beats for concentration</span>
+        <h3>{t('app.music.title')}</h3>
+        <span className="player-subtitle">{t('app.music.subtitle')}</span>
       </div>
 
       <div className="track-info">
@@ -177,7 +179,7 @@ function MusicPlayer() {
       </div>
 
       <div className="playlist">
-        <div className="playlist-header">Playlist</div>
+        <div className="playlist-header">{t('app.music.playlist')}</div>
         {tracks.map((track, index) => (
           <div
             key={index}

@@ -2,8 +2,11 @@ import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import MusicPlayer from './MusicPlayer'
 import Feedback from './Feedback'
+import { useLanguage } from './contexts/LanguageContext'
+import LanguageToggle from './LanguageToggle'
 
 function App() {
+  const { t } = useLanguage()
   const [minutes, setMinutes] = useState(25)
   const [seconds, setSeconds] = useState(0)
   const [isActive, setIsActive] = useState(false)
@@ -20,8 +23,8 @@ function App() {
   // Sound Library
   const sounds = {
     chime: {
-      name: 'Soft Chime',
-      description: 'Gentle bell-like sound',
+      name: t('app.sounds.chime.name'),
+      description: t('app.sounds.chime.description'),
       play: () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
         const notes = [
@@ -50,8 +53,8 @@ function App() {
       }
     },
     piano: {
-      name: 'Piano Chord',
-      description: 'Warm piano-like chord',
+      name: t('app.sounds.piano.name'),
+      description: t('app.sounds.piano.description'),
       play: () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
         // C major chord
@@ -82,8 +85,8 @@ function App() {
       }
     },
     melody: {
-      name: 'Success Melody',
-      description: 'Uplifting completion tune',
+      name: t('app.sounds.melody.name'),
+      description: t('app.sounds.melody.description'),
       play: () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
         const notes = [
@@ -113,8 +116,8 @@ function App() {
       }
     },
     bell: {
-      name: 'Gentle Bell',
-      description: 'Single soft bell tone',
+      name: t('app.sounds.bell.name'),
+      description: t('app.sounds.bell.description'),
       play: () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 
@@ -141,8 +144,8 @@ function App() {
       }
     },
     harp: {
-      name: 'Harp Glissando',
-      description: 'Cascading harp-like notes',
+      name: t('app.sounds.harp.name'),
+      description: t('app.sounds.harp.description'),
       play: () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
         const notes = [
@@ -174,8 +177,8 @@ function App() {
       }
     },
     zen: {
-      name: 'Zen Bowl',
-      description: 'Meditation singing bowl',
+      name: t('app.sounds.zen.name'),
+      description: t('app.sounds.zen.description'),
       play: () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 
@@ -351,8 +354,11 @@ function App() {
 
       <div className="container">
         <div className="glass-card">
+          <div className="app-header">
+            <LanguageToggle />
+          </div>
           <div className="mode-indicator">
-            {isBreak ? 'BREAK TIME' : 'FOCUS TIME'}
+            {isBreak ? t('app.mode.break') : t('app.mode.focus')}
           </div>
 
           <div className="timer-section">
@@ -391,13 +397,13 @@ function App() {
               className="control-btn"
               onClick={toggleTimer}
             >
-              {isActive ? 'PAUSE' : 'START'}
+              {isActive ? t('app.controls.pause') : t('app.controls.start')}
             </button>
             <button
               className="control-btn secondary"
               onClick={resetTimer}
             >
-              RESET
+              {t('app.controls.reset')}
             </button>
           </div>
 
@@ -406,15 +412,15 @@ function App() {
               className="test-btn"
               onClick={() => setShowSoundSettings(!showSoundSettings)}
             >
-              🔊 Sound Settings
+              {t('app.soundSettings.button')}
             </button>
           </div>
 
           {showSoundSettings && (
             <div className="sound-settings">
               <div className="sound-settings-header">
-                <h4>Completion Sound</h4>
-                <p>Choose your perfect ending</p>
+                <h4>{t('app.soundSettings.title')}</h4>
+                <p>{t('app.soundSettings.subtitle')}</p>
               </div>
 
               <div className="sound-options">
@@ -448,12 +454,12 @@ function App() {
 
           <div className="stats">
             <div className="stat-item">
-              <div className="stat-label">WORK</div>
+              <div className="stat-label">{t('app.stats.work')}</div>
               <div className="stat-value">{WORK_TIME}m</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <div className="stat-label">BREAK</div>
+              <div className="stat-label">{t('app.stats.break')}</div>
               <div className="stat-value">{BREAK_TIME}m</div>
             </div>
           </div>
@@ -462,8 +468,8 @@ function App() {
         {/* Tasks Section */}
         <div className="tasks-card glass-card">
           <div className="tasks-header">
-            <h3>Tasks</h3>
-            <span className="tasks-count">{tasks.filter(t => !t.completed).length} active</span>
+            <h3>{t('app.tasks.title')}</h3>
+            <span className="tasks-count">{tasks.filter(task => !task.completed).length} {t('app.tasks.active')}</span>
           </div>
 
           <form onSubmit={addTask} className="task-input-form">
@@ -471,7 +477,7 @@ function App() {
               type="text"
               value={newTaskText}
               onChange={(e) => setNewTaskText(e.target.value)}
-              placeholder="What are you working on?"
+              placeholder={t('app.tasks.placeholder')}
               className="task-input"
             />
             <button type="submit" className="add-task-btn">+</button>
@@ -480,7 +486,7 @@ function App() {
           <div className="tasks-list">
             {tasks.length === 0 ? (
               <div className="empty-state">
-                <p>No tasks yet. Add one to get started!</p>
+                <p>{t('app.tasks.empty')}</p>
               </div>
             ) : (
               tasks.map(task => (
@@ -497,7 +503,7 @@ function App() {
                       <button
                         className="pomodoro-btn"
                         onClick={() => incrementPomodoro(task.id)}
-                        title="Add pomodoro"
+                        title={t('app.tasks.addPomodoro')}
                       >
                         🍅
                       </button>

@@ -1,15 +1,22 @@
 import './Landing.css'
+import { useLanguage } from './contexts/LanguageContext'
+import LanguageToggle from './LanguageToggle'
 
 function Landing({ onEnterApp }) {
+  const { t } = useLanguage()
+
   return (
     <div className="landing">
       {/* Floating Header with Glassmorphism */}
       <header className="landing-header">
         <div className="header-content">
-          <h1 className="logo">GettingShitDone</h1>
-          <button className="cta-btn" onClick={onEnterApp}>
-            Start Now →
-          </button>
+          <h1 className="logo">{t('landing.logo')}</h1>
+          <div className="header-actions">
+            <LanguageToggle />
+            <button className="cta-btn" onClick={onEnterApp}>
+              {t('landing.startNow')}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -17,14 +24,14 @@ function Landing({ onEnterApp }) {
       <section className="hero">
         <div className="hero-content">
           <h2 className="hero-title">
-            Stop procrastinating.<br />
-            Start finishing.
+            {t('landing.hero.title1')}<br />
+            {t('landing.hero.title2')}
           </h2>
           <p className="hero-subtitle">
-            A simple Pomodoro timer that actually helps you get shit done.
+            {t('landing.hero.subtitle')}
           </p>
           <button className="hero-cta" onClick={onEnterApp}>
-            Get Started — It's Free
+            {t('landing.hero.cta')}
           </button>
         </div>
       </section>
@@ -33,28 +40,28 @@ function Landing({ onEnterApp }) {
       <section className="benefits">
         <div className="benefit">
           <span className="benefit-icon">⏱️</span>
-          <h3>25-minute focus sessions</h3>
-          <p>Work in short bursts. Stay sharp.</p>
+          <h3>{t('landing.benefits.focus.title')}</h3>
+          <p>{t('landing.benefits.focus.description')}</p>
         </div>
         <div className="benefit">
           <span className="benefit-icon">🎵</span>
-          <h3>Built-in focus sounds</h3>
-          <p>No tabs. No distractions. Just flow.</p>
+          <h3>{t('landing.benefits.sounds.title')}</h3>
+          <p>{t('landing.benefits.sounds.description')}</p>
         </div>
         <div className="benefit">
           <span className="benefit-icon">✓</span>
-          <h3>Track your progress</h3>
-          <p>See what you've actually accomplished.</p>
+          <h3>{t('landing.benefits.track.title')}</h3>
+          <p>{t('landing.benefits.track.description')}</p>
         </div>
       </section>
 
       {/* Final CTA Section */}
       <section className="final-cta">
-        <h2>Ready to get your shit done?</h2>
+        <h2>{t('landing.finalCta.title')}</h2>
         <button className="cta-large" onClick={onEnterApp}>
-          Start Your First Session
+          {t('landing.finalCta.button')}
         </button>
-        <p className="cta-note">No signup. No bullshit. Just focus.</p>
+        <p className="cta-note">{t('landing.finalCta.note')}</p>
       </section>
     </div>
   )
