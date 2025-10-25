@@ -11,10 +11,10 @@ function LanguageToggle() {
       title={language === 'en-US' ? 'Switch to Portuguese' : 'Mudar para Inglês'}
     >
       <span className={`flag ${language === 'en-US' ? 'active' : ''}`}>
-        {String.fromCodePoint(0x1F1FA, 0x1F1F8)}
+        🇺🇸
       </span>
       <span className={`flag ${language === 'pt-BR' ? 'active' : ''}`}>
-        {String.fromCodePoint(0x1F1E7, 0x1F1F7)}
+        🇧🇷
       </span>
     </button>
   )
