@@ -267,17 +267,28 @@
 /* Responsive */
 @media (max-width: 768px) {
   .landing-header {
-    width: 85%;
-    padding: 12px 20px;
+    width: 90%;
+    padding: 10px 16px;
+  }
+
+  .header-content {
+    gap: 12px;
   }
 
   .logo {
-    font-size: 16px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
   }
 
   .cta-btn {
-    padding: 8px 18px;
-    font-size: 14px;
+    padding: 8px 16px;
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .benefits {
@@ -292,5 +303,26 @@
 
   .final-cta {
     padding: 80px 20px 100px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .landing-header {
+    width: 92%;
+    padding: 8px 12px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .cta-btn {
+    padding: 7px 12px;
+    font-size: 12px;
   }
 }

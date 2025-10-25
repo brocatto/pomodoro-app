@@ -14,6 +14,8 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .language-toggle:hover {
@@ -35,4 +37,21 @@
 .language-toggle .separator {
   opacity: 0.3;
   font-weight: 300;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .language-toggle {
+    padding: 6px 10px;
+    font-size: 12px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-toggle {
+    padding: 5px 8px;
+    font-size: 11px;
+    gap: 4px;
+  }
 }
