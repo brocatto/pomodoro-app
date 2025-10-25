@@ -3,7 +3,7 @@ import './Feedback.css'
 
 // Replace with your Formspree form ID
 // Get yours at: https://formspree.io/
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjkpbwdq'
 
 function Feedback() {
   const [isOpen, setIsOpen] = useState(false)
