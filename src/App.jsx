@@ -347,7 +347,8 @@ function App({ onShowDashboard }) {
           const nextDuration = nextIsBreak ? BREAK_TIME : WORK_TIME
           setMinutes(nextDuration)
           setSeconds(0)
-          setEndTime(Date.now() + nextDuration * 60 * 1000)
+          setIsActive(false)
+          setEndTime(null)
         } else {
           const mins = Math.floor(remaining / 60000)
           const secs = Math.floor((remaining % 60000) / 1000)
