@@ -29,6 +29,7 @@ function App({ onShowDashboard }) {
   const [newTaskText, setNewTaskText] = useState('')
   const [selectedSound, setSelectedSound] = useState('chime')
   const [showSoundSettings, setShowSoundSettings] = useState(false)
+  const [endTime, setEndTime] = useState(null)
   const intervalRef = useRef(null)
 
   const WORK_TIME = 25
@@ -315,42 +316,45 @@ function App({ onShowDashboard }) {
   }, [minutes, seconds, isBreak, updatePositionState])
 
   useEffect(() => {
-    if (isActive) {
+    if (isActive && endTime) {
       intervalRef.current = setInterval(() => {
-        if (seconds === 0) {
-          if (minutes === 0) {
-            // Timer finished
-            playCompletionSound()
+        const remaining = endTime - Date.now()
 
-            // Send notification
-            if (isBreak) {
-              sendNotification(
-                t('notifications.messages.breakComplete.title'),
-                t('notifications.messages.breakComplete.body')
-              )
-            } else {
-              sendNotification(
-                t('notifications.messages.pomodoroComplete.title'),
-                t('notifications.messages.pomodoroComplete.body')
-              )
-            }
+        if (remaining <= 0) {
+          // Timer finished
+          playCompletionSound()
 
-            // Save session to stats
-            const sessionType = isBreak ? 'break' : 'work'
-            const sessionDuration = isBreak ? BREAK_TIME : WORK_TIME
-            addSession(sessionType, sessionDuration)
-
-            setIsBreak(!isBreak)
-            setMinutes(isBreak ? WORK_TIME : BREAK_TIME)
-            setSeconds(0)
+          // Send notification
+          if (isBreak) {
+            sendNotification(
+              t('notifications.messages.breakComplete.title'),
+              t('notifications.messages.breakComplete.body')
+            )
           } else {
-            setMinutes(minutes - 1)
-            setSeconds(59)
+            sendNotification(
+              t('notifications.messages.pomodoroComplete.title'),
+              t('notifications.messages.pomodoroComplete.body')
+            )
           }
+
+          // Save session to stats
+          const sessionType = isBreak ? 'break' : 'work'
+          const sessionDuration = isBreak ? BREAK_TIME : WORK_TIME
+          addSession(sessionType, sessionDuration)
+
+          const nextIsBreak = !isBreak
+          setIsBreak(nextIsBreak)
+          const nextDuration = nextIsBreak ? BREAK_TIME : WORK_TIME
+          setMinutes(nextDuration)
+          setSeconds(0)
+          setEndTime(Date.now() + nextDuration * 60 * 1000)
         } else {
-          setSeconds(seconds - 1)
+          const mins = Math.floor(remaining / 60000)
+          const secs = Math.floor((remaining % 60000) / 1000)
+          setMinutes(mins)
+          setSeconds(secs)
         }
-      }, 1000)
+      }, 100)
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
@@ -362,13 +366,41 @@ function App({ onShowDashboard }) {
         clearInterval(intervalRef.current)
       }
     }
-  }, [isActive, minutes, seconds, isBreak, addSession])
+  }, [isActive, endTime, isBreak, addSession, sendNotification, t])
+
+  // Update page title with timer
+  useEffect(() => {
+    const timeDisplay = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+    const mode = isBreak ? t('app.mode.break') : t('app.mode.focus')
+
+    if (isActive) {
+      document.title = `▶ ${timeDisplay} - ${mode} | GettingShitDone`
+    } else {
+      document.title = `⏸ ${timeDisplay} - ${mode} | GettingShitDone`
+    }
+
+    return () => {
+      document.title = 'GettingShitDone - Pomodoro Timer'
+    }
+  }, [minutes, seconds, isActive, isBreak, t])
 
   const toggleTimer = () => {
     if (!isActive) {
+      // Starting timer
       playClickSound()
+      const totalMs = (minutes * 60 + seconds) * 1000
+      setEndTime(Date.now() + totalMs)
     } else {
+      // Pausing timer - save remaining time
       playPauseSound()
+      if (endTime) {
+        const remaining = Math.max(0, endTime - Date.now())
+        const mins = Math.floor(remaining / 60000)
+        const secs = Math.floor((remaining % 60000) / 1000)
+        setMinutes(mins)
+        setSeconds(secs)
+      }
+      setEndTime(null)
     }
     setIsActive(!isActive)
   }
@@ -378,6 +410,7 @@ function App({ onShowDashboard }) {
     setIsBreak(false)
     setMinutes(WORK_TIME)
     setSeconds(0)
+    setEndTime(null)
   }
 
   const testSound = (soundKey) => {
