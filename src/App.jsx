@@ -25,12 +25,24 @@ function App({ onShowDashboard }) {
   const [seconds, setSeconds] = useState(0)
   const [isActive, setIsActive] = useState(false)
   const [isBreak, setIsBreak] = useState(false)
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const saved = localStorage.getItem('pomodoro_tasks')
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
   const [newTaskText, setNewTaskText] = useState('')
   const [selectedSound, setSelectedSound] = useState('chime')
   const [showSoundSettings, setShowSoundSettings] = useState(false)
   const [endTime, setEndTime] = useState(null)
   const intervalRef = useRef(null)
+
+  // Persist tasks to localStorage
+  useEffect(() => {
+    localStorage.setItem('pomodoro_tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   const WORK_TIME = 25
   const BREAK_TIME = 5

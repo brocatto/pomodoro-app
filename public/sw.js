@@ -1,5 +1,5 @@
 // Service Worker for GettingShitDone Pomodoro Timer
-const CACHE_NAME = 'gettingshitdone-v1'
+const CACHE_NAME = 'gettingshitdone-v2'
 const urlsToCache = [
   '/',
   '/index.html',
@@ -43,36 +43,45 @@ self.addEventListener('activate', (event) => {
   return self.clients.claim()
 })
 
-// Fetch event - serve from cache, fallback to network
+// Helper to identify static assets (cache-first strategy)
+function isStaticAsset(url) {
+  return url.match(/\.(mp3|wav|ogg|png|jpg|jpeg|gif|svg|woff|woff2|ttf)$/) ||
+         url.includes('/music/')
+}
+
+// Fetch event - hybrid strategy
+// Static assets (images, fonts, music): cache-first
+// HTML/JS/CSS: network-first (ensures code updates are received)
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Cache hit - return response
-        if (response) {
-          return response
-        }
+  const url = new URL(event.request.url)
 
-        // Clone the request
-        const fetchRequest = event.request.clone()
-
-        return fetch(fetchRequest).then((response) => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response
+  // Static assets: cache-first
+  if (isStaticAsset(url.pathname)) {
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        return cached || fetch(event.request).then((response) => {
+          if (response.ok) {
+            const clone = response.clone()
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone))
           }
-
-          // Clone the response
-          const responseToCache = response.clone()
-
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache)
-            })
-
           return response
         })
       })
+    )
+    return
+  }
+
+  // HTML/JS/CSS: network-first
+  event.respondWith(
+    fetch(event.request)
+      .then((response) => {
+        if (response.ok) {
+          const clone = response.clone()
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone))
+        }
+        return response
+      })
+      .catch(() => caches.match(event.request))
   )
 })
 
