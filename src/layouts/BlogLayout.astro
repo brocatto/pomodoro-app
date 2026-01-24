@@ -1,0 +1,125 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SEOHead from '../components/astro/SEOHead.astro';
+import SoftCTA from '../components/astro/SoftCTA.astro';
+import '../styles/blog.css';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author?: string;
+  heroImage?: string;
+  keywords?: string[];
+  lang: 'en' | 'pt';
+  faq?: FAQ[];
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  author = 'GettingShitDone Team',
+  heroImage,
+  keywords = [],
+  lang,
+  faq = []
+} = Astro.props;
+
+const canonicalPath = Astro.url.pathname;
+
+const formatDate = (date: Date, locale: string) => {
+  return new Date(date).toLocaleDateString(locale === 'pt' ? 'pt-BR' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+const readingTimeLabel = lang === 'pt' ? 'min de leitura' : 'min read';
+const publishedLabel = lang === 'pt' ? 'Publicado em' : 'Published on';
+const updatedLabel = lang === 'pt' ? 'Atualizado em' : 'Updated on';
+const backLabel = lang === 'pt' ? 'Voltar ao blog' : 'Back to blog';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <SEOHead
+    slot="head"
+    title={title}
+    description={description}
+    canonical={canonicalPath}
+    type="article"
+    image={heroImage}
+    keywords={keywords}
+    faq={faq}
+    publishedTime={pubDate}
+    modifiedTime={updatedDate}
+    author={author}
+  />
+
+  <div class="blog-page">
+    <nav class="blog-nav">
+      <a href={`/blog`} class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 19-7-7 7-7"/>
+          <path d="M19 12H5"/>
+        </svg>
+        {backLabel}
+      </a>
+    </nav>
+
+    <article class="blog-article">
+      <header class="article-header">
+        <h1 class="article-title">{title}</h1>
+        <div class="article-meta">
+          <span class="article-author">{author}</span>
+          <span class="meta-separator">|</span>
+          <time datetime={pubDate.toISOString()}>
+            {publishedLabel} {formatDate(pubDate, lang)}
+          </time>
+          {updatedDate && (
+            <>
+              <span class="meta-separator">|</span>
+              <time datetime={updatedDate.toISOString()}>
+                {updatedLabel} {formatDate(updatedDate, lang)}
+              </time>
+            </>
+          )}
+        </div>
+      </header>
+
+      {heroImage && (
+        <figure class="hero-image">
+          <img src={heroImage} alt={title} loading="eager" />
+        </figure>
+      )}
+
+      <div class="article-content">
+        <slot />
+      </div>
+
+      {faq && faq.length > 0 && (
+        <section class="faq-section">
+          <h2>{lang === 'pt' ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}</h2>
+          <div class="faq-list">
+            {faq.map((item) => (
+              <details class="faq-item">
+                <summary class="faq-question">{item.question}</summary>
+                <p class="faq-answer">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <SoftCTA lang={lang} />
+    </article>
+  </div>
+</BaseLayout>

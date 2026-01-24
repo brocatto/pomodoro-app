@@ -49,7 +49,21 @@
       "name": "Start Focus Session",
       "short_name": "Focus",
       "description": "Start a 25-minute focus session",
-      "url": "/?action=start",
+      "url": "/app",
+      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Read The Protocol",
+      "short_name": "Protocol",
+      "description": "Learn the productivity method behind GettingShitDone",
+      "url": "/protocol",
+      "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Browse Articles",
+      "short_name": "Blog",
+      "description": "Read productivity tips and insights",
+      "url": "/blog",
       "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
     }
   ]

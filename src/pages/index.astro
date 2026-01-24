@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getTranslations } from '../i18n/utils';
+import '../styles/landing.css';
+
+const t = getTranslations('en');
+const lang = t.landing;
+---
+
+<BaseLayout
+  title="Getting Shit Done - Pomodoro Timer"
+  description="A simple Pomodoro timer that actually helps you get shit done."
+  lang="en"
+>
+  <div class="landing">
+    <!-- Floating Header with Glassmorphism -->
+    <header class="landing-header">
+      <div class="header-content">
+        <h1 class="logo">{lang.logo}</h1>
+        <div class="header-actions">
+          <a class="protocol-link" href="/protocol">
+            {lang.theProtocol}
+          </a>
+          <a class="lang-toggle" href="/pt">PT</a>
+          <a class="cta-btn" href="/app">
+            {lang.startNow}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2 class="hero-title">
+          {lang.hero.title1}<br />
+          {lang.hero.title2}
+        </h2>
+        <p class="hero-subtitle">
+          {lang.hero.subtitle}
+        </p>
+        <a class="hero-cta" href="/app">
+          {lang.hero.cta}
+        </a>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+      <div class="benefit">
+        <span class="benefit-icon">&#9201;</span>
+        <h3>{lang.benefits.focus.title}</h3>
+        <p>{lang.benefits.focus.description}</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon">&#127925;</span>
+        <h3>{lang.benefits.sounds.title}</h3>
+        <p>{lang.benefits.sounds.description}</p>
+      </div>
+      <div class="benefit">
+        <span class="benefit-icon">&#10003;</span>
+        <h3>{lang.benefits.track.title}</h3>
+        <p>{lang.benefits.track.description}</p>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+      <h2>{lang.finalCta.title}</h2>
+      <a class="cta-large" href="/app">
+        {lang.finalCta.button}
+      </a>
+      <p class="cta-note">{lang.finalCta.note}</p>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,134 @@
+---
+interface Props {
+  lang: 'en' | 'pt';
+}
+
+const { lang } = Astro.props;
+
+const content = {
+  en: {
+    title: "Ready to stop reading and start doing?",
+    description: "Getting Shit Done is the no-bullshit Pomodoro timer built for people who struggle to focus. No login. No setup. Just hit play and work.",
+    cta: "Try it free",
+    subtext: "No account required. Works offline."
+  },
+  pt: {
+    title: "Pronto para parar de ler e comecar a fazer?",
+    description: "Getting Shit Done e o timer Pomodoro sem enrolacao feito para quem tem dificuldade de focar. Sem login. Sem configuracao. So apertar play e trabalhar.",
+    cta: "Experimente gratis",
+    subtext: "Sem cadastro. Funciona offline."
+  }
+};
+
+const t = content[lang];
+---
+
+<aside class="soft-cta">
+  <div class="soft-cta-content">
+    <h3 class="soft-cta-title">{t.title}</h3>
+    <p class="soft-cta-description">{t.description}</p>
+    <a href="/app" class="soft-cta-button">
+      {t.cta}
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"/>
+        <path d="m12 5 7 7-7 7"/>
+      </svg>
+    </a>
+    <span class="soft-cta-subtext">{t.subtext}</span>
+  </div>
+</aside>
+
+<style>
+  .soft-cta {
+    margin: 4rem 0 2rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .soft-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  }
+
+  .soft-cta-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .soft-cta-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+
+  .soft-cta-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .soft-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  }
+
+  .soft-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+  }
+
+  .soft-cta-button svg {
+    transition: transform 0.3s ease;
+  }
+
+  .soft-cta-button:hover svg {
+    transform: translateX(4px);
+  }
+
+  .soft-cta-subtext {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 640px) {
+    .soft-cta {
+      padding: 2rem 1.5rem;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .soft-cta-title {
+      font-size: 1.25rem;
+    }
+
+    .soft-cta-description {
+      font-size: 0.9375rem;
+    }
+  }
+</style>

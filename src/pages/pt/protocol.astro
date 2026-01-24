@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslations } from '../../i18n/utils';
+import '../../styles/protocol.css';
+
+const t = getTranslations('pt');
+const p = t.protocol;
+---
+
+<BaseLayout
+  title="O Protocolo - Getting Shit Done"
+  description="Como hackeamos cerebros ADHD para fazer as coisas acontecerem"
+  lang="pt"
+>
+  <div class="protocol">
+    <header class="protocol-header">
+      <div class="header-content">
+        <a class="back-btn" href="/pt">
+          &larr; {p.back}
+        </a>
+        <div class="header-actions">
+          <a class="lang-toggle" href="/protocol">EN</a>
+          <a class="cta-btn" href="/app">
+            {p.startNow}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="protocol-hero">
+      <span class="protocol-label">{p.label}</span>
+      <h1 class="protocol-title">{p.title}</h1>
+      <p class="protocol-subtitle">{p.subtitle}</p>
+    </section>
+
+    <section class="protocol-intro">
+      <div class="intro-card">
+        <h2>{p.problem.title}</h2>
+        <p>{p.problem.p1}</p>
+        <div class="scenario">
+          <p class="scenario-label">{p.problem.scenarioLabel}</p>
+          <ol>
+            <li>{p.problem.scenario1}</li>
+            <li>{p.problem.scenario2}</li>
+            <li>{p.problem.scenario3}</li>
+            <li>{p.problem.scenario4}</li>
+            <li>{p.problem.scenario5}</li>
+            <li>{p.problem.scenario6}</li>
+          </ol>
+        </div>
+        <p class="highlight">{p.problem.highlight}</p>
+      </div>
+    </section>
+
+    <section class="protocol-concepts">
+      <!-- Concept 00: Pavlov Yourself -->
+      <article class="concept">
+        <div class="concept-number">00</div>
+        <h2 class="concept-title">{p.pavlov.title}</h2>
+        <p class="concept-subtitle">{p.pavlov.subtitle}</p>
+
+        <blockquote class="concept-quote">
+          "{p.pavlov.quote}"
+        </blockquote>
+
+        <p>{p.pavlov.p1}</p>
+
+        <div class="principle-box">
+          <h3>{p.pavlov.principleTitle}</h3>
+          <ul>
+            <li>{p.pavlov.principle1}</li>
+            <li>{p.pavlov.principle2}</li>
+            <li>{p.pavlov.principle3}</li>
+          </ul>
+        </div>
+
+        <div class="warning-box">
+          <strong>{p.pavlov.warningTitle}</strong>
+          <p>{p.pavlov.warning}</p>
+        </div>
+
+        <div class="how-box">
+          <h3>{p.pavlov.howTitle}</h3>
+          <ul>
+            <li>{p.pavlov.how1}</li>
+            <li>{p.pavlov.how2}</li>
+            <li>{p.pavlov.how3}</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Concept 01: Remove Mental Clutter -->
+      <article class="concept">
+        <div class="concept-number">01</div>
+        <h2 class="concept-title">{p.clutter.title}</h2>
+        <p class="concept-subtitle">{p.clutter.subtitle}</p>
+
+        <blockquote class="concept-quote">
+          "{p.clutter.quote}"
+        </blockquote>
+
+        <p>{p.clutter.p1}</p>
+
+        <div class="principle-box">
+          <h3>{p.clutter.principleTitle}</h3>
+          <ul>
+            <li>{p.clutter.principle1}</li>
+            <li>{p.clutter.principle2}</li>
+            <li>{p.clutter.principle3}</li>
+          </ul>
+        </div>
+
+        <div class="how-box">
+          <h3>{p.clutter.howTitle}</h3>
+          <ul>
+            <li><strong>{p.clutter.how1Label}</strong> &mdash; {p.clutter.how1}</li>
+            <li><strong>{p.clutter.how2Label}</strong> &mdash; {p.clutter.how2}</li>
+            <li><strong>{p.clutter.how3Label}</strong> &mdash; {p.clutter.how3}</li>
+            <li><strong>{p.clutter.how4Label}</strong> &mdash; {p.clutter.how4}</li>
+          </ul>
+        </div>
+
+        <div class="math-box">
+          <h3>{p.clutter.mathTitle}</h3>
+          <code>
+            {p.clutter.math}
+          </code>
+          <p class="math-conclusion">{p.clutter.mathConclusion}</p>
+        </div>
+      </article>
+
+      <!-- Concept 02: Make Distractions Impossible -->
+      <article class="concept">
+        <div class="concept-number">02</div>
+        <h2 class="concept-title">{p.distractions.title}</h2>
+        <p class="concept-subtitle">{p.distractions.subtitle}</p>
+
+        <blockquote class="concept-quote">
+          "{p.distractions.quote}"
+        </blockquote>
+
+        <p>{p.distractions.p1}</p>
+
+        <div class="principle-box">
+          <h3>{p.distractions.principleTitle}</h3>
+          <ul>
+            <li>{p.distractions.principle1}</li>
+            <li>{p.distractions.principle2}</li>
+            <li>{p.distractions.principle3}</li>
+          </ul>
+        </div>
+
+        <div class="how-box">
+          <h3>{p.distractions.howTitle}</h3>
+          <ul>
+            <li><strong>{p.distractions.how1Label}</strong> &mdash; {p.distractions.how1}</li>
+            <li><strong>{p.distractions.how2Label}</strong> &mdash; {p.distractions.how2}</li>
+            <li><strong>{p.distractions.how3Label}</strong> &mdash; {p.distractions.how3}</li>
+            <li><strong>{p.distractions.how4Label}</strong> &mdash; {p.distractions.how4}</li>
+          </ul>
+        </div>
+
+        <div class="science-box">
+          <h3>{p.distractions.blindnessTitle}</h3>
+          <p>{p.distractions.blindness1}</p>
+          <p class="highlight">{p.distractions.blindness2}</p>
+        </div>
+      </article>
+
+      <!-- Concept 03: Time Batch -->
+      <article class="concept">
+        <div class="concept-number">03</div>
+        <h2 class="concept-title">{p.timebatch.title}</h2>
+        <p class="concept-subtitle">{p.timebatch.subtitle}</p>
+
+        <blockquote class="concept-quote">
+          "{p.timebatch.quote}"
+        </blockquote>
+
+        <p>{p.timebatch.p1}</p>
+
+        <div class="principle-box">
+          <h3>{p.timebatch.principleTitle}</h3>
+          <ul>
+            <li>{p.timebatch.principle1}</li>
+            <li>{p.timebatch.principle2}</li>
+            <li>{p.timebatch.principle3}</li>
+          </ul>
+        </div>
+
+        <div class="how-box">
+          <h3>{p.timebatch.howTitle}</h3>
+          <ul>
+            <li><strong>{p.timebatch.how1Label}</strong> &mdash; {p.timebatch.how1}</li>
+            <li><strong>{p.timebatch.how2Label}</strong> &mdash; {p.timebatch.how2}</li>
+            <li><strong>{p.timebatch.how3Label}</strong> &mdash; {p.timebatch.how3}</li>
+          </ul>
+        </div>
+
+        <p class="highlight">{p.timebatch.closing}</p>
+      </article>
+
+      <!-- Concept 04: Don't Start, Prepare -->
+      <article class="concept">
+        <div class="concept-number">04</div>
+        <h2 class="concept-title">{p.prepare.title}</h2>
+        <p class="concept-subtitle">{p.prepare.subtitle}</p>
+
+        <blockquote class="concept-quote">
+          "{p.prepare.quote}"
+        </blockquote>
+
+        <p>{p.prepare.p1}</p>
+
+        <div class="principle-box">
+          <h3>{p.prepare.principleTitle}</h3>
+          <ul>
+            <li>{p.prepare.principle1}</li>
+            <li>{p.prepare.principle2}</li>
+            <li>{p.prepare.principle3}</li>
+          </ul>
+        </div>
+
+        <div class="how-box">
+          <h3>{p.prepare.howTitle}</h3>
+          <ul>
+            <li><strong>{p.prepare.how1Label}</strong> &mdash; {p.prepare.how1}</li>
+            <li><strong>{p.prepare.how2Label}</strong> &mdash; {p.prepare.how2}</li>
+            <li><strong>{p.prepare.how3Label}</strong> &mdash; {p.prepare.how3}</li>
+          </ul>
+        </div>
+
+        <p class="highlight">{p.prepare.closing}</p>
+      </article>
+
+      <!-- Concept 05: Embrace Pressure & Constraints -->
+      <article class="concept">
+        <div class="concept-number">05</div>
+        <h2 class="concept-title">{p.pressure.title}</h2>
+        <p class="concept-subtitle">{p.pressure.subtitle}</p>
+
+        <blockquote class="concept-quote">
+          "{p.pressure.quote}"
+        </blockquote>
+
+        <p>{p.pressure.p1}</p>
+
+        <div class="principle-box">
+          <h3>{p.pressure.principleTitle}</h3>
+          <ul>
+            <li>{p.pressure.principle1}</li>
+            <li>{p.pressure.principle2}</li>
+            <li>{p.pressure.principle3}</li>
+          </ul>
+        </div>
+
+        <div class="how-box">
+          <h3>{p.pressure.howTitle}</h3>
+          <ul>
+            <li><strong>{p.pressure.how1Label}</strong> &mdash; {p.pressure.how1}</li>
+            <li><strong>{p.pressure.how2Label}</strong> &mdash; {p.pressure.how2}</li>
+          </ul>
+        </div>
+
+        <p class="highlight">{p.pressure.closing}</p>
+      </article>
+    </section>
+
+    <section class="protocol-cta">
+      <h2>{p.cta.title}</h2>
+      <p>{p.cta.subtitle}</p>
+      <a class="cta-large" href="/app">
+        {p.cta.button}
+      </a>
+      <p class="cta-note">{p.cta.note}</p>
+    </section>
+
+    <footer class="protocol-footer">
+      <p>{p.footer}</p>
+    </footer>
+  </div>
+</BaseLayout>

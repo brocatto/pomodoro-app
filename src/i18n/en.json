@@ -1,0 +1,170 @@
+{
+  "landing": {
+    "logo": "GettingShitDone",
+    "startNow": "Start Now",
+    "theProtocol": "The Protocol",
+    "hero": {
+      "title1": "Stop procrastinating.",
+      "title2": "Start finishing.",
+      "subtitle": "A simple Pomodoro timer that actually helps you get shit done.",
+      "cta": "Get Started - It's Free"
+    },
+    "benefits": {
+      "focus": {
+        "title": "25-minute focus sessions",
+        "description": "Work in short bursts. Stay sharp."
+      },
+      "sounds": {
+        "title": "Built-in focus sounds",
+        "description": "No tabs. No distractions. Just flow."
+      },
+      "track": {
+        "title": "Track your progress",
+        "description": "See what you've actually accomplished."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to get your shit done?",
+      "button": "Start Your First Session",
+      "note": "No signup. No bullshit. Just focus."
+    }
+  },
+  "protocol": {
+    "back": "Back",
+    "startNow": "Start Now",
+    "label": "The Science Behind the Simplicity",
+    "title": "The Protocol",
+    "subtitle": "How we hack ADHD brains into getting shit done",
+    "problem": {
+      "title": "The Problem",
+      "p1": "Most productivity apps fail ADHD brains because they demand management before action.",
+      "scenarioLabel": "Common scenario:",
+      "scenario1": "Open Notion",
+      "scenario2": "Create the task",
+      "scenario3": "Add a tag",
+      "scenario4": "\"What color should the tag be?\"",
+      "scenario5": "20 minutes later I'm picking icons",
+      "scenario6": "No work done",
+      "highlight": "The ADHD problem isn't \"not knowing what to do.\" It's breaking through the Wall of Awful to start."
+    },
+    "pavlov": {
+      "title": "PAVLOV YOURSELF",
+      "subtitle": "Neuro-Anchoring",
+      "quote": "You sit on the couch and watch movies. Your brain now associates that couch with movies. You scroll TikTok in bed at night, your brain now associates your bed with TikTok.",
+      "p1": "We are highly adaptive creatures. The more you repeat, the more you associate. Use this to your benefit.",
+      "principleTitle": "The Principle",
+      "principle1": "Dedicate a specific playlist ONLY for deep work",
+      "principle2": "Dedicate a specific environment ONLY for focus",
+      "principle3": "Dedicate a specific ritual ONLY for execution",
+      "warningTitle": "The Golden Rule",
+      "warning": "You break the association bond the second you start watching YouTube on your work computer or listen to your work playlist while doing something else. Conditioning requires absolute consistency.",
+      "howTitle": "How the app applies this",
+      "how1": "Integrated playlist with scientific tracks (binaural beats, isochronic tones)",
+      "how2": "Sound that is monotonous in a good way - occupies the part of your brain looking for distraction without engaging linguistic processing",
+      "how3": "User hears the sound - brain thinks: \"Focus time.\" Daily repetition strengthens the neural trigger."
+    },
+    "clutter": {
+      "title": "REMOVE MENTAL CLUTTER",
+      "subtitle": "Zero Friction",
+      "quote": "We are non-linear thinkers. One idea sparks another which sparks another.",
+      "p1": "Every decision is cognitive cost. Every option is an opportunity to procrastinate.",
+      "principleTitle": "The Principle",
+      "principle1": "Less is more, literally",
+      "principle2": "Every element on screen must justify its existence",
+      "principle3": "If it doesn't help execution, it hurts it",
+      "howTitle": "How the app applies this",
+      "how1Label": "No login",
+      "how1": "not developer laziness, it's cognitive accessibility",
+      "how2Label": "No infinite settings",
+      "how2": "strong opinions, zero configuration",
+      "how3Label": "No metrics dashboard",
+      "how3": "that becomes a distraction",
+      "how4Label": "Simple tasks",
+      "how4": "text + checkbox. No tags, no colors, no priorities",
+      "mathTitle": "The friction math",
+      "math": "Friction = Decisions x Time per Decision x Cognitive Energy\n\nLogin = +1 decision (which email?)\nTags = +N decisions (which tag? which color?)\nSettings = +N decisions (how long? which sound? which theme?)\n\nMore decisions = Less energy for real work",
+      "mathConclusion": "Every feature removed is value added."
+    },
+    "distractions": {
+      "title": "MAKE DISTRACTIONS IMPOSSIBLE",
+      "subtitle": "Active Defense",
+      "quote": "You will inevitably reach for distractions. You'll convince yourself you're thirsty, need to go to the bathroom, or have to check email. You don't.",
+      "p1": "The ADHD brain is a dopamine predator. Any pause in activity is an opening for distraction.",
+      "principleTitle": "The Principle",
+      "principle1": "Proactively reduce unwanted stimuli",
+      "principle2": "Keep the work pace high - any lull causes focus loss",
+      "principle3": "Every time you catch yourself distracted and reorient, you get better at focusing",
+      "howTitle": "How the app applies this",
+      "how1Label": "Visible timer",
+      "how1": "constantly externalizes time",
+      "how2Label": "Dynamic page title",
+      "how2": "shows remaining time even in other tabs",
+      "how3Label": "End-of-cycle notifications",
+      "how3": "pulls you back",
+      "how4Label": "Continuous music",
+      "how4": "occupies the brain's \"novelty scanner\"",
+      "blindnessTitle": "About Time Blindness",
+      "blindness1": "People with ADHD suffer from time blindness. 15 minutes and 3 hours feel the same in our heads.",
+      "blindness2": "The visible timer solves this. Time stops being an abstract feeling and becomes a concrete number counting down. This creates real urgency, not artificial."
+    },
+    "timebatch": {
+      "title": "TIME BATCH",
+      "subtitle": "Race the Clock",
+      "quote": "Something you think will take an hour ends up taking 15 minutes and vice versa.",
+      "p1": "ADHD brains work great under pressure but have horrible temporal awareness. So don't batch work by task - batch by time.",
+      "principleTitle": "The Principle",
+      "principle1": "Set a timer for 25 minutes and an objective",
+      "principle2": "Race to get it done before the clock runs out",
+      "principle3": "The pressure creates focus that willpower alone can't",
+      "howTitle": "How the app applies this",
+      "how1Label": "Fixed 25-minute sessions",
+      "how1": "no negotiating with yourself about \"just 5 more minutes\"",
+      "how2Label": "Visible countdown",
+      "how2": "creates urgency and competitive pressure against yourself",
+      "how3Label": "Task attached to session",
+      "how3": "one clear objective per time block",
+      "closing": "I love pressure and competition. Racing against the clock gives me no other option but to dial in."
+    },
+    "prepare": {
+      "title": "DON'T START, PREPARE",
+      "subtitle": "Negotiate with Your Brain",
+      "quote": "The ADHD brain cannot be brute-forced into doing work. It must be negotiated with.",
+      "p1": "No matter how hard you try, you can't start a new task. That's okay. Instead, start preparing everything you need to do that task at a later date.",
+      "principleTitle": "The Principle",
+      "principle1": "Can't start? Then prepare.",
+      "principle2": "Gather everything you need for \"later\"",
+      "principle3": "Preparation often turns into execution naturally",
+      "howTitle": "How the app applies this",
+      "how1Label": "Task list before timer",
+      "how1": "write down what you'll work on - that's preparation",
+      "how2Label": "Music ready to go",
+      "how2": "no searching for the right playlist",
+      "how3Label": "One-click start",
+      "how3": "everything is prepared, just hit play",
+      "closing": "The trick: Once you start preparing, your brain often slips into actually doing the work. Preparation is the backdoor to execution."
+    },
+    "pressure": {
+      "title": "EMBRACE PRESSURE & CONSTRAINTS",
+      "subtitle": "Pressure Creates Diamonds",
+      "quote": "The ADHD brain is constantly understimulated. One of the best ways to stimulate it is to add pressure.",
+      "p1": "I perform best when I have a full plate. It forces you to focus on the 20% of tasks that yield 80% of results. There's not much motivation to hunt when you only have one mouth to feed.",
+      "principleTitle": "The Principle",
+      "principle1": "Take on more, not less",
+      "principle2": "Constraints force prioritization",
+      "principle3": "Constantly try to get more done in less time",
+      "howTitle": "How the app applies this",
+      "how1Label": "Time constraint",
+      "how1": "25 minutes forces you to prioritize what actually matters",
+      "how2Label": "No pause button abuse",
+      "how2": "the clock keeps ticking - embrace the pressure",
+      "closing": "One of the many paradoxes of the neurodivergent brain: we need more pressure, not less."
+    },
+    "cta": {
+      "title": "Ready to try?",
+      "subtitle": "No account. No setup. No bullshit.",
+      "button": "Start Your First Session",
+      "note": "Just you, a timer, and your tasks."
+    },
+    "footer": "Built by someone with ADHD, for people with ADHD."
+  }
+}

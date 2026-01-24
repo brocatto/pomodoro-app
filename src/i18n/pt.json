@@ -1,0 +1,170 @@
+{
+  "landing": {
+    "logo": "GettingShitDone",
+    "startNow": "Comecar Agora",
+    "theProtocol": "O Protocolo",
+    "hero": {
+      "title1": "Pare de procrastinar.",
+      "title2": "Comece a terminar.",
+      "subtitle": "Um timer Pomodoro simples que realmente te ajuda a fazer as coisas.",
+      "cta": "Comecar - E Gratis"
+    },
+    "benefits": {
+      "focus": {
+        "title": "Sessoes de foco de 25 minutos",
+        "description": "Trabalhe em pequenos intervalos. Mantenha o foco."
+      },
+      "sounds": {
+        "title": "Sons de foco integrados",
+        "description": "Sem abas. Sem distracoes. Apenas fluxo."
+      },
+      "track": {
+        "title": "Acompanhe seu progresso",
+        "description": "Veja o que voce realmente conquistou."
+      }
+    },
+    "finalCta": {
+      "title": "Pronto para fazer as coisas acontecerem?",
+      "button": "Comecar Sua Primeira Sessao",
+      "note": "Sem cadastro. Sem enrolacao. Apenas foco."
+    }
+  },
+  "protocol": {
+    "back": "Voltar",
+    "startNow": "Comecar Agora",
+    "label": "A Ciencia Por Tras da Simplicidade",
+    "title": "O Protocolo",
+    "subtitle": "Como hackeamos cerebros ADHD para fazer as coisas acontecerem",
+    "problem": {
+      "title": "O Problema",
+      "p1": "A maioria dos apps de produtividade falha com cerebros ADHD porque exigem gerenciamento antes da acao.",
+      "scenarioLabel": "Cenario comum:",
+      "scenario1": "Abro o Notion",
+      "scenario2": "Crio a task",
+      "scenario3": "Coloco uma tag",
+      "scenario4": "\"Qual cor a tag deveria ter?\"",
+      "scenario5": "20 minutos depois estou escolhendo icones",
+      "scenario6": "Nenhum trabalho feito",
+      "highlight": "O problema do ADHD nao e \"nao saber o que fazer\". E atravessar a Muralha do Horrivel para comecar."
+    },
+    "pavlov": {
+      "title": "PAVLOV YOURSELF",
+      "subtitle": "Neuro-Ancoragem",
+      "quote": "Voce senta no sofa e assiste filmes. Seu cerebro agora associa aquele sofa com filmes. Voce rola TikTok na cama a noite, seu cerebro agora associa sua cama com TikTok.",
+      "p1": "Somos criaturas altamente adaptativas. Quanto mais voce repete, mais voce associa. Use isso a seu favor.",
+      "principleTitle": "O Principio",
+      "principle1": "Dedique uma playlist especifica APENAS para deep work",
+      "principle2": "Dedique um ambiente especifico APENAS para foco",
+      "principle3": "Dedique um ritual especifico APENAS para execucao",
+      "warningTitle": "A Regra de Ouro",
+      "warning": "Voce quebra o vinculo de associacao no segundo que comeca a assistir YouTube no computador de trabalho ou ouvir sua playlist de trabalho fazendo outra coisa. O condicionamento exige consistencia absoluta.",
+      "howTitle": "Como o app aplica isso",
+      "how1": "Playlist integrada com tracks cientificas (binaural beats, isochronic tones)",
+      "how2": "Som monotono no bom sentido - ocupa a parte do cerebro que busca distracao sem engajar processamento linguistico",
+      "how3": "Usuario ouve o som - cerebro pensa: \"Hora do foco.\" Repeticao diaria fortalece o gatilho neural."
+    },
+    "clutter": {
+      "title": "REMOVA A DESORDEM MENTAL",
+      "subtitle": "Zero Friccao",
+      "quote": "Somos pensadores nao-lineares. Uma ideia dispara outra que dispara outra.",
+      "p1": "Cada decisao e custo cognitivo. Cada opcao e uma oportunidade de procrastinar.",
+      "principleTitle": "O Principio",
+      "principle1": "Menos e mais, literalmente",
+      "principle2": "Cada elemento na tela deve justificar sua existencia",
+      "principle3": "Se nao ajuda a execucao, atrapalha",
+      "howTitle": "Como o app aplica isso",
+      "how1Label": "Sem login",
+      "how1": "nao e preguica de dev, e acessibilidade cognitiva",
+      "how2Label": "Sem configuracoes infinitas",
+      "how2": "opiniao forte, zero configuracao",
+      "how3Label": "Sem dashboard de metricas",
+      "how3": "que vira distracao",
+      "how4Label": "Tasks simples",
+      "how4": "texto + checkbox. Sem tags, sem cores, sem prioridades",
+      "mathTitle": "A matematica da friccao",
+      "math": "Friccao = Decisoes x Tempo por Decisao x Energia Cognitiva\n\nLogin = +1 decisao (qual email?)\nTags = +N decisoes (qual tag? qual cor?)\nConfiguracoes = +N decisoes (quanto tempo? qual som? qual tema?)\n\nMais decisoes = Menos energia pro trabalho real",
+      "mathConclusion": "Cada feature removida e valor adicionado."
+    },
+    "distractions": {
+      "title": "TORNE DISTRACOES IMPOSSIVEIS",
+      "subtitle": "Defesa Ativa",
+      "quote": "Voce vai inevitavelmente buscar distracoes. Vai se convencer que esta com sede, precisa ir ao banheiro, ou tem que checar email. Nao precisa.",
+      "p1": "O cerebro ADHD e um predador de dopamina. Qualquer pausa na atividade e uma brecha para distracao.",
+      "principleTitle": "O Principio",
+      "principle1": "Reduza estimulos indesejados proativamente",
+      "principle2": "Mantenha o ritmo de trabalho alto - qualquer lull causa perda de foco",
+      "principle3": "Cada vez que voce se pega distraido e reorienta, voce fica melhor em focar",
+      "howTitle": "Como o app aplica isso",
+      "how1Label": "Timer visivel",
+      "how1": "externaliza o tempo constantemente",
+      "how2Label": "Titulo da pagina dinamico",
+      "how2": "mostra tempo restante mesmo em outras abas",
+      "how3Label": "Notificacoes de fim de ciclo",
+      "how3": "te puxa de volta",
+      "how4Label": "Musica continua",
+      "how4": "ocupa o \"scanner de novidades\" do cerebro",
+      "blindnessTitle": "Sobre Cegueira Temporal",
+      "blindness1": "Pessoas com ADHD sofrem de cegueira temporal. 15 minutos e 3 horas parecem a mesma coisa na nossa cabeca.",
+      "blindness2": "O timer visivel resolve isso. O tempo deixa de ser um sentimento abstrato e vira um numero concreto contando. Isso cria urgencia real, nao artificial."
+    },
+    "timebatch": {
+      "title": "TIME BATCH",
+      "subtitle": "Corrida Contra o Relogio",
+      "quote": "Algo que voce acha que vai levar uma hora acaba em 15 minutos e vice-versa.",
+      "p1": "Cerebros ADHD funcionam bem sob pressao mas tem pessima consciencia temporal. Entao nao organize trabalho por tarefa - organize por tempo.",
+      "principleTitle": "O Principio",
+      "principle1": "Defina um timer de 25 minutos e um objetivo",
+      "principle2": "Corra para terminar antes do tempo acabar",
+      "principle3": "A pressao cria foco que forca de vontade sozinha nao consegue",
+      "howTitle": "Como o app aplica isso",
+      "how1Label": "Sessoes fixas de 25 minutos",
+      "how1": "sem negociar consigo mesmo sobre \"so mais 5 minutinhos\"",
+      "how2Label": "Contagem regressiva visivel",
+      "how2": "cria urgencia e pressao competitiva contra voce mesmo",
+      "how3Label": "Tarefa vinculada a sessao",
+      "how3": "um objetivo claro por bloco de tempo",
+      "closing": "Eu amo pressao e competicao. Correr contra o relogio nao me da outra opcao senao focar."
+    },
+    "prepare": {
+      "title": "NAO COMECE, PREPARE",
+      "subtitle": "Negocie com Seu Cerebro",
+      "quote": "O cerebro ADHD nao pode ser forcado a trabalhar. Precisa ser negociado.",
+      "p1": "Por mais que voce tente, nao consegue comecar uma nova tarefa. Tudo bem. Em vez disso, comece a preparar tudo que voce precisa para fazer essa tarefa depois.",
+      "principleTitle": "O Principio",
+      "principle1": "Nao consegue comecar? Entao prepare.",
+      "principle2": "Junte tudo que voce precisa para \"depois\"",
+      "principle3": "Preparacao frequentemente vira execucao naturalmente",
+      "howTitle": "Como o app aplica isso",
+      "how1Label": "Lista de tarefas antes do timer",
+      "how1": "escreva no que voce vai trabalhar - isso e preparacao",
+      "how2Label": "Musica pronta pra tocar",
+      "how2": "sem procurar pela playlist certa",
+      "how3Label": "Inicio com um clique",
+      "how3": "tudo esta preparado, so apertar play",
+      "closing": "O truque: Uma vez que voce comeca a preparar, seu cerebro frequentemente escorrega para realmente fazer o trabalho. Preparacao e a porta dos fundos para execucao."
+    },
+    "pressure": {
+      "title": "ABRACE PRESSAO E RESTRICOES",
+      "subtitle": "Pressao Cria Diamantes",
+      "quote": "O cerebro ADHD e constantemente subestimulado. Uma das melhores formas de estimula-lo e adicionar pressao.",
+      "p1": "Eu performo melhor quando tenho o prato cheio. Isso te forca a focar nos 20% das tarefas que geram 80% dos resultados. Nao ha muita motivacao para cacar quando voce so tem uma boca pra alimentar.",
+      "principleTitle": "O Principio",
+      "principle1": "Assuma mais, nao menos",
+      "principle2": "Restricoes forcam priorizacao",
+      "principle3": "Constantemente tente fazer mais em menos tempo",
+      "howTitle": "Como o app aplica isso",
+      "how1Label": "Restricao de tempo",
+      "how1": "25 minutos te forca a priorizar o que realmente importa",
+      "how2Label": "Sem abusar do pause",
+      "how2": "o relogio continua correndo - abrace a pressao",
+      "closing": "Um dos muitos paradoxos do cerebro neurodivergente: precisamos de mais pressao, nao menos."
+    },
+    "cta": {
+      "title": "Pronto pra testar?",
+      "subtitle": "Sem conta. Sem setup. Sem enrolacao.",
+      "button": "Comecar Sua Primeira Sessao",
+      "note": "So voce, um timer, e suas tarefas."
+    },
+    "footer": "Criado por alguem com ADHD, para pessoas com ADHD."
+  }
+}

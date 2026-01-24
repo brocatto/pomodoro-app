@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEOHead from '../../components/astro/SEOHead.astro';
+import { getCollection } from 'astro:content';
+import '../../styles/blog.css';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) =>
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+const formatDate = (date: Date, lang: string) => {
+  return new Date(date).toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+};
+
+const getPostUrl = (post: any) => {
+  const slugParts = post.slug.split('/');
+  const lang = slugParts[0];
+  const slug = slugParts.slice(1).join('/');
+  return `/blog/${lang}/${slug}`;
+};
+---
+
+<BaseLayout
+  title="Blog - Focus, Productivity & ADHD Tips"
+  description="Practical, science-backed articles on focus, productivity, and thriving with ADHD. No fluff, just strategies that work."
+>
+  <SEOHead
+    slot="head"
+    title="Blog - Focus, Productivity & ADHD Tips"
+    description="Practical, science-backed articles on focus, productivity, and thriving with ADHD. No fluff, just strategies that work."
+    canonical="/blog"
+    type="website"
+    keywords={['productivity', 'focus', 'ADHD', 'pomodoro', 'time management', 'deep work']}
+  />
+
+  <div class="blog-index">
+    <header class="blog-index-header">
+      <h1 class="blog-index-title">Blog</h1>
+      <p class="blog-index-subtitle">
+        Science-backed strategies for focus and productivity. No fluff.
+      </p>
+    </header>
+
+    {sortedPosts.length === 0 ? (
+      <div class="blog-empty">
+        <p>No articles yet. Check back soon!</p>
+      </div>
+    ) : (
+      <div class="articles-grid">
+        {sortedPosts.map((post) => (
+          <a href={getPostUrl(post)} class="article-card">
+            <span class="article-card-lang">{post.data.lang.toUpperCase()}</span>
+            <h2 class="article-card-title">{post.data.title}</h2>
+            <p class="article-card-description">{post.data.description}</p>
+            <time class="article-card-date" datetime={post.data.pubDate.toISOString()}>
+              {formatDate(post.data.pubDate, post.data.lang)}
+            </time>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>
