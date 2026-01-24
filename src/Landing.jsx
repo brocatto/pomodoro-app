@@ -2,7 +2,7 @@ import './Landing.css'
 import { useLanguage } from './contexts/LanguageContext'
 import LanguageToggle from './LanguageToggle'
 
-function Landing({ onEnterApp }) {
+function Landing({ onEnterApp, onShowProtocol }) {
   const { t } = useLanguage()
 
   return (
@@ -12,6 +12,9 @@ function Landing({ onEnterApp }) {
         <div className="header-content">
           <h1 className="logo">{t('landing.logo')}</h1>
           <div className="header-actions">
+            <button className="protocol-link" onClick={onShowProtocol}>
+              {t('landing.theProtocol')}
+            </button>
             <LanguageToggle />
             <button className="cta-btn" onClick={onEnterApp}>
               {t('landing.startNow')}
