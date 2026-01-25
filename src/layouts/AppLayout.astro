@@ -1,4 +1,12 @@
 ---
+import '../styles/app.css';
+import '../styles/dashboard.css';
+import '../styles/feedback.css';
+import '../styles/language-toggle.css';
+import '../styles/notification-banner.css';
+import '../styles/tooltip.css';
+import '../styles/debug-panel.css';
+
 interface Props {
   title: string;
 }
@@ -27,15 +35,6 @@ const { title } = Astro.props;
     <meta name="keywords" content="pomodoro, timer, productivity, focus, tasks, ADHD, time management" />
 
     <title>{title}</title>
-
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/src/styles/app.css" />
-    <link rel="stylesheet" href="/src/styles/dashboard.css" />
-    <link rel="stylesheet" href="/src/styles/feedback.css" />
-    <link rel="stylesheet" href="/src/styles/language-toggle.css" />
-    <link rel="stylesheet" href="/src/styles/notification-banner.css" />
-    <link rel="stylesheet" href="/src/styles/tooltip.css" />
-    <link rel="stylesheet" href="/src/styles/debug-panel.css" />
   </head>
   <body>
     <slot />
