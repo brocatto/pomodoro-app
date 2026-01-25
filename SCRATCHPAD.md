@@ -9,7 +9,7 @@
 **Data:** 2026-01-24
 **Fase:** Content Overhaul COMPLETA - Blog reestruturado com KWs validadas
 
-### Blog Atual (4 artigos EN)
+### Blog Atual (5 artigos EN)
 
 | Artigo | Keyword | Volume/mês | URL |
 |--------|---------|------------|-----|
@@ -17,8 +17,9 @@
 | Body Doubling | body doubling adhd | 18.100 | /blog/en/body-doubling-adhd-solo-alternative |
 | Revenge Bedtime | revenge bedtime procrastination | 18.100 | /blog/en/revenge-bedtime-procrastination-protocol |
 | Time Blindness | time blindness adhd | 2.900 | /blog/en/time-blindness-adhd-superpower |
+| Dopamine Menu | dopamine menu adhd | 210 (+86% YoY) | /blog/en/dopamine-menu-adhd-break-planning |
 
-**Total potencial:** ~61.300 buscas/mês (baixa competição)
+**Total potencial:** ~61.500 buscas/mês (baixa competição)
 
 **PT pausado:** Mercado muito pequeno (<100 buscas/mês nas KWs principais)
 
@@ -207,7 +208,7 @@
 - [ ] Monitorar rankings e tráfego orgânico
 - [ ] Identificar artigos que performam → criar mais do mesmo ângulo
 - [ ] Internal linking entre artigos para fortalecer SEO
-- [ ] Criar artigo "dopamine menu adhd" (KW emergente +86% YoY)
+- [x] ~~Criar artigo "dopamine menu adhd"~~ (FEITO - KW emergente +86% YoY)
 - [ ] Atualizar artigos periodicamente (Google favorece conteúdo atualizado)
 
 ---
