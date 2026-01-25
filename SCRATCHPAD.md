@@ -49,24 +49,26 @@
 
 ---
 
-### Matriz de Keywords
+### Keywords Validadas (Google Keyword Planner)
 
-#### Ângulo A: Viés Neurocientífico (Foco ADHD/TDAH)
+| Keyword | Volume/mês | Competição | Status |
+|---------|------------|------------|--------|
+| adhd paralysis | 22.200 | Baixa | ✅ Artigo publicado |
+| body doubling adhd | 18.100 | Baixa | ✅ Artigo publicado |
+| revenge bedtime procrastination | 18.100 | Baixa | ✅ Artigo publicado |
+| time blindness adhd | 2.900 | Baixa | ✅ Artigo publicado |
+| dopamine menu adhd | 210 (+86% YoY) | Baixa | ✅ Artigo publicado |
 
-| Keyword | Conceito Relacionado |
-|---------|---------------------|
-| "Por que não consigo começar a trabalhar mesmo querendo?" | ADHD Paralysis / Prepare |
-| "Música binaural funciona para estudar?" | Pavlov Yourself |
-| "Cegueira temporal sintomas" | Time Batch |
-| "Dopamina detox como fazer" | Remove Clutter |
+**Total coberto:** ~61.500 buscas/mês
 
-#### Ângulo B: Viés Comportamental (Foco em Hábitos)
+### Backlog de Keywords (para futuros artigos)
 
-| Keyword | Conceito Relacionado |
-|---------|---------------------|
-| "Como criar um ritual de trabalho" | Pavlov Yourself |
-| "Técnica Pomodoro não funciona pra mim" | Time Batch / Pressure |
-| "Como treinar o cérebro para focar" | Pavlov + Distractions |
+| Keyword | Volume/mês | Notas |
+|---------|------------|-------|
+| adhd hyperfocus | 14.800 | Potencial alto |
+| adhd burnout | 9.900 | Relacionado ao público |
+| pomodoro adhd | 1.300 | Diretamente relacionado ao app |
+| adhd morning routine | 1.000 | Ângulo prático |
 
 ---
 
@@ -106,35 +108,15 @@
 
 ---
 
-### Pautas de Conteúdo
+### Artigos Publicados
 
-#### Pauta #01: O Conceito Pavloviano
-- **Target KW:** "Como entrar em estado de flow rápido" / "Cérebro condicionado"
-- **Headline:** O "Truque de Pavlov": Como treinar seu cérebro para focar instantaneamente (sem remédios).
-- **Estrutura:**
-  1. Explicar experimento de Pavlov
-  2. Trazer para realidade do home office (sofá = netflix)
-  3. Explicar "Ancoragem Auditiva" (música específica para trabalho)
-  4. Ponte: "Você precisa de ambiente isolado com som embutido"
-  5. Soft CTA: "Eu uso o [Link] porque toca áudio de foco ao dar play no timer"
-
-#### Pauta #02: A Guerra contra a Dopamina
-- **Target KW:** "Vício em celular atrapalha estudos" / "Cura para procrastinação TDAH"
-- **Headline:** A "Muralha do Horrível": Por que seu to-do list está te paralisando (e como resolver).
-- **Estrutura:**
-  1. Falar sobre "Paralisia de Escolha" e excesso de ferramentas
-  2. Explicar que cérebro ADHD precisa de Fricção Zero
-  3. Ponte: "A solução é minimalismo digital"
-  4. Soft CTA: "Parei de usar apps complexos. É abrir e trabalhar."
-
-#### Pauta #03: Time Batching & Cegueira Temporal
-- **Target KW:** "Sensação de tempo passando rápido TDAH" / "Trabalhar com pressão funciona?"
-- **Headline:** Você não é preguiçoso, você tem Cegueira Temporal. Veja como usar isso a seu favor.
-- **Estrutura:**
-  1. Validar que ADHD funciona na urgência (noradrenalina)
-  2. Explicar Time Batching > Task Batching
-  3. Citar técnica "Correr contra o relógio"
-  4. Soft CTA: "Use timer visual que fique na sua cara"
+| # | Título | KW Principal | Ângulo |
+|---|--------|--------------|--------|
+| 1 | How to Break ADHD Paralysis in 30 Seconds | adhd paralysis | Zero-friction, anti-paralysis tool |
+| 2 | Can't Do Body Doubling? Try This Solo Alternative | body doubling adhd | Alternativa para introvertidos |
+| 3 | Stop Revenge Bedtime Procrastination: 25-Min Protocol | revenge bedtime procrastination | Wind-down ritual às 21h |
+| 4 | You're Not Lazy, You Have Time Blindness | time blindness adhd | Usar pressão como superpoder |
+| 5 | The Dopamine Menu: Breaks That Don't Destroy Focus | dopamine menu adhd | Planejar breaks que recarregam |
 
 ---
 
@@ -192,6 +174,7 @@
 - [x] Body Doubling - Solo Alternative angle (novo)
 - [x] Revenge Bedtime Procrastination - 25min Protocol angle (novo)
 - [x] Time Blindness - Superpower angle (mantido)
+- [x] Dopamine Menu - Break Planning angle (novo)
 - [x] Deletar conteúdo PT (mercado pequeno)
 - [x] Deletar artigo Pavlov EN (0 volume)
 
@@ -215,9 +198,10 @@
 
 ## Decisões Tomadas
 
-1. **Idiomas:** Ambos (PT-BR + EN) - dobra alcance, menos competição em PT-BR
+1. **Idiomas:** ~~Ambos~~ → **Apenas EN** (PT pausado - mercado <100 buscas/mês)
 2. **Plataforma:** Blog próprio (gettingshitdone.pro/blog) - controle total + SEO no domínio
 3. **Sistema:** Perene e quase automatizado - conteúdo evergreen que rankeia sozinho
+4. **Foco:** Keywords informacionais de ADHD com alto volume e baixa competição
 
 ### Sistema Perene - Conceito
 
@@ -276,6 +260,14 @@ O objetivo é criar um "asset" de conteúdo que:
 
 **Próximo passo:** Google Search Console + distribuição
 
+### 2026-01-24 (Dopamine Menu Article)
+- Criado artigo `dopamine-menu-adhd-break-planning.mdx`
+- KW emergente: "dopamine menu adhd" (210/mês, +86% YoY)
+- Ângulo: Como planejar breaks que recarregam ao invés de drenar
+- Commit: `43ce6a5`
+
+**Blog agora tem 5 artigos EN, ~61.500 buscas/mês potenciais**
+
 ---
 
 ## Referências Rápidas
@@ -283,5 +275,5 @@ O objetivo é criar um "asset" de conteúdo que:
 - **PHILOSOPHY.md** - Filosofia completa do produto (conceitos core)
 - **src/pages/protocol.astro** - Página "The Protocol" no site
 - **src/pages/index.astro** - Landing page principal
-- **src/content/blog/en/** - Artigos do blog (4 artigos)
+- **src/content/blog/en/** - Artigos do blog (5 artigos)
 - **KW Search/** - Dados de keyword research (Google Keyword Planner)
