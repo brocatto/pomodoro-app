@@ -7,7 +7,20 @@
 ## Status Atual
 
 **Data:** 2026-01-24
-**Fase:** Estratégia de tráfego orgânico definida, pronto para implementação
+**Fase:** Content Overhaul COMPLETA - Blog reestruturado com KWs validadas
+
+### Blog Atual (4 artigos EN)
+
+| Artigo | Keyword | Volume/mês | URL |
+|--------|---------|------------|-----|
+| ADHD Paralysis | adhd paralysis | 22.200 | /blog/en/adhd-paralysis-zero-friction |
+| Body Doubling | body doubling adhd | 18.100 | /blog/en/body-doubling-adhd-solo-alternative |
+| Revenge Bedtime | revenge bedtime procrastination | 18.100 | /blog/en/revenge-bedtime-procrastination-protocol |
+| Time Blindness | time blindness adhd | 2.900 | /blog/en/time-blindness-adhd-superpower |
+
+**Total potencial:** ~61.300 buscas/mês (baixa competição)
+
+**PT pausado:** Mercado muito pequeno (<100 buscas/mês nas KWs principais)
 
 ---
 
@@ -151,29 +164,39 @@
 
 ## Roadmap de Implementação
 
-### Fase 1: Infraestrutura do Blog (PRÓXIMO PASSO)
-- [ ] Criar estrutura de blog no site (gettingshitdone.pro/blog)
-- [ ] Layout otimizado para advertorial (leitura longa, sem distrações)
-- [ ] SEO técnico (meta tags, Open Graph, structured data)
-- [ ] Sistema bilíngue (PT-BR + EN) com URL structure (/blog/pt/ e /blog/en/)
-- [ ] Soft CTA component reutilizável para os artigos
+### Fase 1: Infraestrutura do Blog ✅ CONCLUÍDA
+- [x] Criar estrutura de blog no site (gettingshitdone.pro/blog)
+- [x] Layout otimizado para advertorial (leitura longa, sem distrações)
+- [x] SEO técnico (meta tags, Open Graph, structured data)
+- [x] Sistema bilíngue (PT-BR + EN) com URL structure (/blog/pt/ e /blog/en/)
+- [x] Soft CTA component reutilizável para os artigos
 
-### Fase 2: Pesquisa de Keywords
-- [ ] Pesquisa de KWs com ferramentas (Ubersuggest, Ahrefs, Google Keyword Planner)
-- [ ] Validar volume de busca das KWs mapeadas
-- [ ] Priorizar KWs por: volume × baixa competição × intenção informacional
-- [ ] Mapear KWs secundárias/LSI para cada pauta
+### Fase 2: Pesquisa de Keywords ✅ CONCLUÍDA
+- [x] Pesquisa de KWs com Google Keyword Planner
+- [x] Validar volume de busca das KWs mapeadas
+- [x] Priorizar KWs por: volume × baixa competição × intenção informacional
+- [x] Decisão: Foco em EN (volume alto), pausar PT (volume baixo)
 
-### Fase 3: Produção de Conteúdo
-- [ ] Escrever Pauta #01 (Pavlov) - PT-BR
-- [ ] Escrever Pauta #01 (Pavlov) - EN
-- [ ] Escrever Pauta #02 (Clutter) - PT-BR
-- [ ] Escrever Pauta #02 (Clutter) - EN
-- [ ] Escrever Pauta #03 (Time Batch) - PT-BR
-- [ ] Escrever Pauta #03 (Time Batch) - EN
+**Dados coletados:**
+| Keyword (EN) | Volume/mês | Competição |
+|--------------|------------|------------|
+| adhd paralysis | 22.200 | Baixa |
+| body doubling adhd | 18.100 | Baixa |
+| revenge bedtime procrastination | 18.100 | Baixa |
+| time blindness adhd | 2.900 | Baixa |
+| dopamine menu adhd | 210 (+86% YoY) | Baixa (backlog) |
 
-### Fase 4: Distribuição & Amplificação
-- [ ] Publicar artigos no blog próprio (fonte primária)
+### Fase 3: Produção de Conteúdo ✅ CONCLUÍDA
+- [x] ADHD Paralysis - Zero Friction angle (otimizado)
+- [x] Body Doubling - Solo Alternative angle (novo)
+- [x] Revenge Bedtime Procrastination - 25min Protocol angle (novo)
+- [x] Time Blindness - Superpower angle (mantido)
+- [x] Deletar conteúdo PT (mercado pequeno)
+- [x] Deletar artigo Pavlov EN (0 volume)
+
+### Fase 4: Distribuição & Amplificação (PRÓXIMO PASSO)
+- [ ] Configurar Google Search Console
+- [ ] Submeter sitemap e URLs para indexação
 - [ ] Sindicalizar para Medium (com canonical apontando pro blog)
 - [ ] Adaptar e publicar no LinkedIn
 - [ ] Post em r/ADHD (EN) - formato "I built a tool"
@@ -181,10 +204,10 @@
 - [ ] Submit no Hacker News (quando tiver tração inicial)
 
 ### Fase 5: Sistema Perene
-- [ ] Configurar Google Search Console
 - [ ] Monitorar rankings e tráfego orgânico
 - [ ] Identificar artigos que performam → criar mais do mesmo ângulo
 - [ ] Internal linking entre artigos para fortalecer SEO
+- [ ] Criar artigo "dopamine menu adhd" (KW emergente +86% YoY)
 - [ ] Atualizar artigos periodicamente (Google favorece conteúdo atualizado)
 
 ---
@@ -228,21 +251,36 @@ O objetivo é criar um "asset" de conteúdo que:
 - PWA: Service Worker atualizado para novas rotas
 - Build: 12 páginas, ~2.9s, sitemap gerado automaticamente
 
-**Artigos publicados:**
-1. EN: pavlov-trick-instant-focus
-2. EN: wall-of-awful-adhd-paralysis
-3. EN: time-blindness-adhd-superpower
-4. PT: truque-pavlov-foco-instantaneo
-5. PT: muralha-do-horrivel-paralisia-tdah
-6. PT: cegueira-temporal-tdah-superpoder
+**Artigos publicados (versão antiga - substituída):**
+~~6 artigos (3 EN + 3 PT)~~ → Ver Content Overharound abaixo
 
-**Próximo passo:** Deploy para produção e validação SEO
+### 2026-01-24 (Content Overhaul - CONCLUÍDA)
+- **Keyword Research:** Dados reais do Google Keyword Planner
+- **Descoberta:** EN tem 58k+ buscas/mês, PT tem <100 (mercado imaturo)
+- **Decisão:** Foco total em EN, pausar PT
+
+**Ações executadas:**
+1. Deletado: `pavlov-trick-instant-focus.mdx` (EN) - KW sem volume
+2. Deletado: Todos os 3 artigos PT - mercado pequeno
+3. Otimizado: ADHD Paralysis → `adhd-paralysis-zero-friction.mdx`
+4. Criado: `body-doubling-adhd-solo-alternative.mdx` (18.1k/mês)
+5. Criado: `revenge-bedtime-procrastination-protocol.mdx` (18.1k/mês)
+6. Mantido: `time-blindness-adhd-superpower.mdx` (2.9k/mês)
+
+**Resultado:**
+- 4 artigos EN otimizados para KWs validadas
+- ~61.300 buscas/mês potenciais (baixa competição)
+- Build OK, deployed via Vercel
+- Commit: `239c501`
+
+**Próximo passo:** Google Search Console + distribuição
 
 ---
 
 ## Referências Rápidas
 
 - **PHILOSOPHY.md** - Filosofia completa do produto (conceitos core)
-- **src/Protocol.jsx** - Página "The Protocol" no site
-- **src/Landing.jsx** - Landing page principal
-- **src/locales/translations.js** - Textos EN/PT-BR
+- **src/pages/protocol.astro** - Página "The Protocol" no site
+- **src/pages/index.astro** - Landing page principal
+- **src/content/blog/en/** - Artigos do blog (4 artigos)
+- **KW Search/** - Dados de keyword research (Google Keyword Planner)
